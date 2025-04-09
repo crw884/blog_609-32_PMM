@@ -1,0 +1,15 @@
+{% extends "base_layout.html" %}
+{% block title %}Log in{% endblock title %}
+{% block content %}
+<main class="signup">
+    <h1>Вход в аккаунт</h1>
+
+    <form class="form" action="/accounts/login/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Login</button>
+    </form>
+    <p class="link-signup">Еще не <a href="{% url 'signup' %}">зарегистрировались?</a></p>
+
+</main>
+{% endblock content %}

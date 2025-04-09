@@ -1,0 +1,14 @@
+{% extends "base_layout.html" %}
+{% block title %}About{% endblock title %}
+{% block content %}
+    <main>
+    <div class="about">
+        <h1>{{ header }}</h1>
+        <p>Директор: {{ director.name }}</p>
+        <p>Адрес: {{ address.0 }}, {{ address.1 }}, {{ address.2 }}.</p>
+        <p>Админинстраторы: {{ staff.0 }}.</p>
+    </div>
+    </main>
+{% endblock content %}
+
+
