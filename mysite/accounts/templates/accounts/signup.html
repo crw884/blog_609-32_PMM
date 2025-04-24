@@ -1,0 +1,12 @@
+{% extends "base_layout.html" %}
+{% block title %}Signup{% endblock title %}
+{% block content %}
+<main class="signup">
+    <h1>Регистрация</h1>
+    <form class="form" action="{% url 'accounts:signup' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Sign up</button>
+    </form>
+</main>
+{% endblock content %}

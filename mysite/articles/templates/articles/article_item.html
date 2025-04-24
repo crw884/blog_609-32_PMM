@@ -1,0 +1,19 @@
+{% extends "base_layout.html" %}
+{% block title %}{{ article.title }}{% endblock title %}
+{% block content %}
+    <div class="article-detail">
+        {% if article.thumbnail.url != null %}
+        <div class="thumbnail-grad">
+            <div class="article_thumbnail-wrapper">
+                <img src="{{ article.thumbnail.url }}" alt="" class="thumbnail">
+                <p class="article-date"> Опубликовано: {{ article.date | date:"d.m.Y"}}</p>
+            </div>
+        </div>
+        {% endif %}
+        <div class="article-base">
+            <h1> {{ article.title }} </h1>
+            <p> {{ article.body }} </p>
+        </div>
+
+    </div>
+{% endblock content %}

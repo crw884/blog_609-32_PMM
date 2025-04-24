@@ -1,0 +1,26 @@
+{% extends "base_layout.html" %}
+{% block title %}Article list{% endblock title %}
+{% block content %}
+<main>
+    <h1>Список статей</h1>
+
+    <div class="articles">
+        {% if user.is_authenticated %}
+            <a href="{% url 'articles:create' %}" class="btn_article-create">Создать статью</a>
+        {% endif %}
+        {% for element in articles %}
+            <div class="article__item">
+                <h2>
+                    <a href="{% url 'articles:article_detail' slug=element.slug %}">
+                        {{ element.title }}
+                    </a>
+                </h2>
+                <p> {# { element.body }#}
+                    {{ element.snippet }}
+                </p>
+                <time> {{ element.date }} </time>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

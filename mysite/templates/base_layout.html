@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Default title{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+<header>
+        <div class="logo">
+            <img src="{% static '/img/logo.svg' %}" alt="DAMN!!!!!!!1">
+        </div>
+        <nav>
+            <ul>
+                <!--<li><a href="/">Главная</a></li>-->
+                <li><a href="{% url 'homepage' %}">Статьи</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                        <form class="form" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button class="logout-btn" type="submit">Выйти</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'accounts:login' %}">Войти</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+</header>
+{% block content %}{% endblock content %}
+<footer>
+    <p class="footer-copyright">
+        @crw448 all rights violated.
+    </p>
+</footer>
+</body>
+</html>
