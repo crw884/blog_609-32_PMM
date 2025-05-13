@@ -2,11 +2,17 @@
 {% block title %}About{% endblock title %}
 {% block content %}
     <main>
-    <div class="about">
-        <h1>{{ header }}</h1>
-        <p>Директор: {{ director.name }}</p>
-        <p>Адрес: {{ address.0 }}, {{ address.1 }}, {{ address.2 }}.</p>
-        <p>Админинстраторы: {{ staff.0 }}.</p>
+    <div class="about container">
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                      <h1>{{ header }}</h1>
+                    <p>Директор: {{ director.name }}</p>
+                    <p>Адрес: {{ address.0 }}, {{ address.1 }}, {{ address.2 }}.</p>
+                    <p>Админинстраторы: {{ staff.0 }}.</p>
+                </div>
+
+            </div>
     </div>
     </main>
 {% endblock content %}

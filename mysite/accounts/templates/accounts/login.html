@@ -2,17 +2,22 @@
 {% block title %}Log in{% endblock title %}
 {% block content %}
 <main class="signup">
-    <h1>Вход в аккаунт</h1>
-
-    <form class="form" action="{% url 'accounts:login' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        {% if request.GET.next %}
-            <input type="hidden" name="next" value="{{ request.GET.next }}">
-        {% endif %}
-        <button type="submit">Login</button>
-    </form>
-    <p class="link-signup">Еще не <a href="{% url 'accounts:signup' %}">зарегистрировались?</a></p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1>Вход в аккаунт</h1>
+            <div class="col-lg-8 col-12 signup-form">
+                <form class="form" action="{% url 'accounts:login' %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    {% if request.GET.next %}
+                        <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    {% endif %}
+                    <button type="submit" class="btn btn-success">Войти в аккаунт</button>
+                </form>
+                <p class="link-signup">Еще не <a href="{% url 'accounts:signup' %}">зарегистрировались?</a></p>
+            </div>
+        </div>
+    </div>
 
 </main>
 {% endblock content %}

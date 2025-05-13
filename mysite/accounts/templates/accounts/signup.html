@@ -6,7 +6,7 @@
     <form class="form" action="{% url 'accounts:signup' %}" method="post">
         {% csrf_token %}
         {{ form }}
-        <button type="submit">Sign up</button>
+        <button type="submit" class="btn btn-success">Создать аккаунт</button>
     </form>
 </main>
 {% endblock content %}
