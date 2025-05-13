@@ -140,6 +140,7 @@ h1{
     }
     p{
         display: flex;
+        font-size: 24px;
     }
     .thumbnail{
         margin: 0 auto;
