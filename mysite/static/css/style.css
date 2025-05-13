@@ -9,6 +9,15 @@ hr{
     margin: 0;
 }
 
+.btn_article-create{
+        width: 160px;
+        height: 50px;
+        display: flex;
+        font-size: 1.1em;
+        justify-content: center;
+        align-items: center;
+}
+
 header{
     height: 105px;
     display: flex;
@@ -76,10 +85,9 @@ h1{
 }
 
 .articles{
-    display: flex;
-    flex-direction: column;
+
     max-width: 1000px;
-    align-items: center;
+
     gap: 30px;
     margin: 0 auto 30px auto;
     a{
@@ -426,14 +434,7 @@ h1{
         }
     }
 
-    .btn_article-create{
-        width: 200px;
-        height: 60px;
-        display: flex;
-        font-size: 1.5em;
-        justify-content: center;
-        align-items: center;
-    }
+
 
     .form-wrapper{
 
@@ -456,6 +457,15 @@ h1{
             align-items: center;
         }
     }
+    .btn_article-create{
+        width: 200px;
+        height: 60px;
+        display: flex;
+        font-size: 1.5em;
+        justify-content: center;
+        align-items: center;
+    }
+
     .article-buttons{
         .btn{
             width: 200px;
